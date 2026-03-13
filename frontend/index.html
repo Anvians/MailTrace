@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MailTrace Pro | OSINT Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans">
+
+    <nav class="border-b border-slate-800 p-4 mb-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white"><i class="fas fa-fingerprint text-blue-500 mr-2"></i>MailTrace</h1>
+            <button onclick="exportCSV()" class="text-sm bg-slate-800 px-4 py-2 rounded-lg border border-slate-700">Export CSV</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Turn an email into a <span class="text-blue-500">profile</span></h2>
+            <p class="text-slate-400">Search LinkedIn, GitHub, and 50+ sources instantly.</p>
+        </div>
+
+        <div class="relative max-w-2xl mx-auto mb-6">
+            <input id="emailInput" type="email" placeholder="Enter target email..."
+                   class="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700 focus:ring-2 focus:ring-blue-500 outline-none text-lg">
+            <button onclick="startScan()" class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-bold transition">
+                Search
+            </button>
+        </div>
+
+        <div class="max-w-2xl mx-auto mt-6 p-4 border-2 border-dashed border-slate-700 rounded-xl bg-slate-800/20 text-center mb-10">
+            <p class="text-sm text-slate-400 mb-3">Or upload a list of emails (CSV)</p>
+            <input type="file" id="csvFile" accept=".csv" class="hidden">
+            <label for="csvFile" class="cursor-pointer bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded text-sm transition">
+                <i class="fas fa-file-upload mr-2"></i> Choose File
+            </label>
+            <button onclick="uploadCSV()" class="ml-2 text-blue-400 font-bold hover:underline">Start Bulk Scan</button>
+        </div>
+
+        <div id="resultsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+        <div id="profilesSection" class="mt-8 hidden">
+            <h3 class="text-xl font-bold text-white mb-4">Profiles &amp; Avatars</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="profilesGrid"></div>
+        </div>
+
+        <div id="accountsSection" class="mt-8 hidden">
+            <h3 class="text-xl font-bold text-white mb-4">Registered Accounts</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="accountsGrid"></div>
+        </div>
+
+        <div id="securitySection" class="mt-8 hidden">
+            <h3 class="text-xl font-bold text-white mb-4">Security &amp; Breaches</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="securityGrid"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
