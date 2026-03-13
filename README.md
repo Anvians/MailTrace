@@ -2,7 +2,7 @@
 
 **MailTrace** is a high-performance Open Source Intelligence (OSINT) tool designed to map the digital presence associated with an email address. By leveraging asynchronous API orchestration and public authentication endpoints, MailTrace identifies registered accounts across major platforms like GitHub, Microsoft, Spotify, and more.
 
-
+![Home Page](public/image.png)
 
 ##  Key Features
 - **Real-time Account Discovery:** Checks 50+ platforms (Microsoft, GitHub, Adobe, Spotify, etc.) without alerting the target.
